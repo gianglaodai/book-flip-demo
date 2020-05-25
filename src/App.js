@@ -66,7 +66,7 @@ class App extends React.Component {
                     toolbar:
                         'undo redo | formatselect | bold italic backcolor | \
                         alignleft aligncenter alignright alignjustify | \
-                        bullist numlist outdent indent | removeformat | table |help'
+                        bullist numlist outdent indent | removeformat | table | link image | help'
                 }}
                 onEditorChange={(content,editor)=>{
                         this.setState((prevState) => {

@@ -4,8 +4,6 @@ import "turn.js";
 import pageFlip from "./page-flip-01a.wav";
 import { Parser } from "html-to-react";
 
-const audio = new Audio(pageFlip);
-
 class PreviewBook extends Component {
   componentDidMount() {
     this.$el.turn({
@@ -18,11 +16,6 @@ class PreviewBook extends Component {
       duration: 2000,
       gradients: true,
       turnCorners: "tl,tr",
-      when: {
-        turning: (e, page, view) => {
-          audio.play();
-        },
-      },
     });
 
     document.addEventListener("keydown", this.handleKeyDown, false);
@@ -47,10 +40,8 @@ class PreviewBook extends Component {
   render() {
     const parser = new Parser();
     const pages = this.props.data
-      .map((page) => parser.parse(page))
       .map((page, index) => (
-        <div style={{ backgroundColor: "white" }} key={index}>
-          {page}
+        <div style={{ backgroundColor: "white" }} key={index} dangerouslySetInnerHTML={{__html:page}}>
         </div>
       ));
     console.log(pages);

@@ -15,12 +15,10 @@ class Page extends Component {
   }
 
   render() {
-    const parser = new Parser();
-    const reactElement = parser.parse(this.props.data);
     return (
       <div class="page">
         <div class="page-content" ref={(el) => (this.$el = $(el))}>
-          <div class="page-content" >{reactElement}</div>
+          <div class="page-content" dangerouslySetInnerHTML={{__html:this.props.data}}></div>
         </div>
       </div>
     );
