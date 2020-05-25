@@ -16,9 +16,9 @@ class Page extends Component {
 
   render() {
     return (
-      <div class="page">
-        <div class="page-content" ref={(el) => (this.$el = $(el))}>
-          <div class="page-content">
+      <div className="page">
+        <div className="page-content" ref={(el) => (this.$el = $(el))}>
+          <div className="page-content">
             <FroalaEditorView model={this.props.data} />
           </div>
         </div>

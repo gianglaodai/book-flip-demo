@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import $ from "jquery";
 import "turn.js";
-import pageFlip from "./page-flip-01a.wav";
-import { Parser } from "html-to-react";
 import FroalaEditorView from 'react-froala-wysiwyg/FroalaEditorView';
 
 class PreviewBook extends Component {
@@ -50,8 +48,8 @@ class PreviewBook extends Component {
     ));
     console.log(pages);
     return (
-      <div class="book-container">
-        <div class="book">
+      <div className="book-container">
+        <div className="book">
           <div ref={(el) => (this.$el = $(el))}>
             <div style={{ backgroundColor: "white" }}>Start</div>
             {pages}
